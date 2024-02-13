@@ -11,7 +11,7 @@ const payments = [visa, master, paypal, skrill];
 
 const Footer = () => {
   return (
-    <footer className="bg-[#F9F9F9] border-t pt-10">
+    <footer className="bg-[#F9F9F9] pt-10">
       <Container>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 items-center">
           <div>
