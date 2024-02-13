@@ -1,4 +1,3 @@
-import Footer from "./Footer";
 import Hero from "./Hero";
 import HighlightProducts from "./HighlightProducts";
 import NewArrivals from "./NewArrivals";
@@ -13,7 +12,6 @@ const Home = () => {
       <Products />
       <TopBrands />
       <HighlightProducts />
-      <Footer />
     </>
   );
 };
