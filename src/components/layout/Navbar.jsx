@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 const Navbar = () => {
   return (
-    <div className="w-full max-w-[1200px] mx-auto">
+    <div className="w-full max-w-[1200px] mx-auto  px-3">
       <div className="flex-none lg:hidden ">
         <label
           htmlFor="my-drawer-3"
@@ -33,25 +33,41 @@ const Navbar = () => {
         <ul className="menu menu-horizontal">
           {/* Navbar menu content here */}
           <li>
-            <Link className="mr-2 text-[18px] font-semibold" to="/">
-              Home
-            </Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <Link className="mr-2 text-[18px] font-semibold" to="/">
-              Add Product
-            </Link>
+            <Link to="/addProduct">Add Product</Link>
           </li>
           <li>
-            <Link className="mr-2 text-[18px] font-semibold" to="/">
-              My Cart
-            </Link>
+            <Link to="/myCart">My Cart</Link>
           </li>
           <li>
-            <Link className=" text-[18px] font-semibold" to="/">
-              Login
-            </Link>
+            <Link to="/login">Login</Link>
           </li>
+          {/* <div className="dropdown dropdown-end ">
+            <label tabIndex={0} className="cursor-pointer">
+              <div className="avatar">
+                <div className="w-10 rounded-full">
+                  <img src="https://w7.pngwing.com/pngs/178/595/png-transparent-user-profile-computer-icons-login-user-avatars-thumbnail.png" />
+                </div>
+              </div>
+            </label>
+            <div
+              tabIndex={0}
+              className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <NavLink
+                to="/"
+                className="px-4 py-2 hover:bg-base-300 rounded-lg"
+              >
+                Profile
+              </NavLink>
+
+              <div className="cursor-pointer text-red-500 px-4 py-2 hover:bg-base-300 rounded-lg">
+                Logout
+              </div>
+            </div>
+          </div> */}
         </ul>
       </div>
     </div>
