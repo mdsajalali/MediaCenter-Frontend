@@ -5,11 +5,11 @@ import Container from "../components/Container";
 const Hero = () => {
   return (
     <Container>
-      <div className="grid grid-cols-12">
-        <div className="col-span-4">
+      <div className="grid grid-cols-12 gap-10">
+        <div className="lg:col-span-4 col-span-12">
           <Category />
         </div>
-        <div className="col-span-8">
+        <div className="lg:col-span-8 col-span-12">
           <Banner />
         </div>
       </div>
