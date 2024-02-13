@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const Login = () => {
   return (
-    <div className="min-h-screen bg-base-200 flex justify-center items-center">
+    <div className="min-h-screen bg-base-200 flex justify-center items-center px-4">
       <div className="card flex-shrink-0 w-full max-w-md shadow-2xl bg-base-100">
         <form className="card-body">
           <div className="form-control">
@@ -31,7 +31,7 @@ const Login = () => {
           <p className="text-center text-sm">
             Don&apos;t have an account ?{" "}
             <NavLink
-              to="/signup"
+              to="/register"
               className="text-[#59B210] font-bold hover:underline cursor-pointer "
             >
               Register
@@ -48,7 +48,7 @@ const Login = () => {
           <div className="divider ">Or, Continue With</div>
           <button
             type="button"
-            className="btn bg-[#59B210] hover:bg-[#0E53A5]  w-full flex justify-between items-center cursor-pointer text-white "
+            className="btn bg-white text-black hover:bg-[#0E53A5]  w-full flex justify-between items-center cursor-pointer hover:text-white border-[#59B210] "
           >
             Google
             <FcGoogle className="w-8 h-8" />
