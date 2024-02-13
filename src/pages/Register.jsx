@@ -1,11 +1,42 @@
 import { FcGoogle } from "react-icons/fc";
 import { NavLink } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 
 const Register = () => {
+  const { createUser } = useAuth();
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const userInfo = { name, email, password };
+    console.log(userInfo);
+    createUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
   return (
     <div className="min-h-screen bg-base-200 flex justify-center items-center px-4">
       <div className="card flex-shrink-0 w-full max-w-md shadow-2xl bg-base-100">
-        <form className="card-body">
+        <form className="card-body" onSubmit={handleRegister}>
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Name</span>
+            </label>
+            <input
+              type="text"
+              placeholder="name"
+              className="input input-bordered"
+              required
+              name="name"
+            />
+          </div>
           <div className="form-control">
             <label className="label">
               <span className="label-text">Email</span>
@@ -15,6 +46,7 @@ const Register = () => {
               placeholder="email"
               className="input input-bordered"
               required
+              name="email"
             />
           </div>
           <div className="form-control">
@@ -26,6 +58,7 @@ const Register = () => {
               placeholder="password"
               className="input input-bordered"
               required
+              name="password"
             />
           </div>
           <p className="text-center text-sm">
