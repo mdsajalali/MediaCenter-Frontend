@@ -1,10 +1,12 @@
+import { Outlet } from "react-router-dom";
+import MainLayout from "./components/layout/MainLayout";
+
 const App = () => {
   return (
-    <div>
-      <h1 className="text-2xl ">Media Center</h1>
-    </div>
+    <MainLayout>
+      <Outlet />
+    </MainLayout>
   );
 };
 
 export default App;
-
