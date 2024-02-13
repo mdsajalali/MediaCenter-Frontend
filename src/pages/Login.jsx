@@ -1,11 +1,29 @@
 import { FcGoogle } from "react-icons/fc";
 import { NavLink } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 
 const Login = () => {
+  const { loginUser } = useAuth();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    const userInfo = { email, password };
+    console.log(userInfo);
+    loginUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
   return (
     <div className="min-h-screen bg-base-200 flex justify-center items-center px-4">
       <div className="card flex-shrink-0 w-full max-w-md shadow-2xl bg-base-100">
-        <form className="card-body">
+        <form className="card-body" onSubmit={handleLogin}>
           <div className="form-control">
             <label className="label">
               <span className="label-text">Email</span>
@@ -15,6 +33,7 @@ const Login = () => {
               placeholder="email"
               className="input input-bordered"
               required
+              name="email"
             />
           </div>
           <div className="form-control">
@@ -26,6 +45,7 @@ const Login = () => {
               placeholder="password"
               className="input input-bordered"
               required
+              name="password"
             />
           </div>
           <p className="text-center text-sm">
