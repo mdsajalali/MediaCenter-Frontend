@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Container from "../components/Container";
+import { Link } from "react-router-dom";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -47,6 +48,16 @@ const Products = () => {
               <div className="flex items-center">
                 <span className="text-yellow-500 mr-1">&#9733;</span>
                 <span>{product.rating}</span>
+              </div>
+              <div className="flex items-center justify-center gap-5">
+                <Link to={`/productDetail/${id}`}>
+                  <button className=" bg-[#59B210] hover:bg-[#0E53A5] transition-all rounded-sm p-2 mt-3   font-semibold text-white ">
+                    Quick View
+                  </button>
+                </Link>
+                <button className=" bg-[#59B210] hover:bg-[#0E53A5] transition-all rounded-sm p-2 mt-3   font-semibold text-white ">
+                  Add To Cart
+                </button>
               </div>
             </div>
           ))}
