@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
+import { FiEdit } from "react-icons/fi";
+import { MdDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Container from "../components/Container";
-import { FiEdit } from "react-icons/fi";
 
 // categories list
 const categories = ["all products", "camera", "phone", "laptop", "headphone"];
@@ -26,6 +27,20 @@ const Products = () => {
 
   const addToCart = (id) => {
     console.log(id);
+  };
+
+  const deleteProduct = (id) => {
+    // console.log(id)
+    fetch(`http://localhost:5000/products/${id}`, { method: "DELETE" })
+      .then((res) => res.json())
+      .then((data) => {
+        const filteredProduct = products.filter(
+          (product) => product._id !== id
+        );
+        setProducts(filteredProduct);
+        alert("Product Deleted");
+        console.log(data);
+      });
   };
 
   return (
@@ -73,6 +88,12 @@ const Products = () => {
                     <FiEdit />
                   </button>
                 </Link>
+                <button
+                  onClick={() => deleteProduct(product._id)}
+                  className=" bg-[#59B210] hover:bg-[#0E53A5] transition-all rounded-sm p-2 mt-3   font-semibold text-white "
+                >
+                  <MdDelete />
+                </button>
                 <Link to={`/productDetail/${product._id}`}>
                   <button className=" bg-[#59B210] hover:bg-[#0E53A5] transition-all rounded-sm p-2 mt-3   font-semibold text-white ">
                     Quick View
