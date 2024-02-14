@@ -4,6 +4,7 @@ import { MdDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import Container from "../components/Container";
+import useAuth from "../hooks/useAuth";
 
 // categories list
 const categories = ["all products", "camera", "phone", "laptop", "headphone"];
@@ -11,10 +12,9 @@ const categories = ["all products", "camera", "phone", "laptop", "headphone"];
 const Products = () => {
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState("");
-  const [loading, setLoading] = useState(true);
+  const { loading } = useAuth();
 
   useEffect(() => {
-    setLoading(true);
     const fetchData = async () => {
       let url = "http://localhost:5000/products";
       if (category !== "all products") {
@@ -24,7 +24,6 @@ const Products = () => {
         .then((res) => res.json())
         .then((data) => {
           setProducts(data);
-          setLoading(false);
         });
     };
     fetchData();
