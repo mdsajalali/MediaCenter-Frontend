@@ -7,6 +7,7 @@ import Login from "../pages/Login";
 import MyCart from "../pages/MyCart";
 import Register from "../pages/Register";
 import PrivateRoute from "./PrivateRoute";
+import UpdateProduct from "../components/UpdateProduct";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,12 @@ const router = createBrowserRouter([
             <ProductDetail />
           </PrivateRoute>
         ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/products/${params.id}`),
+      },
+      {
+        path: "/updateProduct/:id",
+        element: <UpdateProduct />,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/products/${params.id}`),
       },

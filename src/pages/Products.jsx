@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Container from "../components/Container";
+import { FiEdit } from "react-icons/fi";
 
 // categories list
 const categories = ["all products", "camera", "phone", "laptop", "headphone"];
@@ -67,6 +68,11 @@ const Products = () => {
                 <span>{product?.rating}</span>
               </div>
               <div className="flex items-center justify-center gap-5">
+                <Link to={`/updateProduct/${product._id}`}>
+                  <button className=" bg-[#59B210] hover:bg-[#0E53A5] transition-all rounded-sm p-2 mt-3   font-semibold text-white ">
+                    <FiEdit />
+                  </button>
+                </Link>
                 <Link to={`/productDetail/${product._id}`}>
                   <button className=" bg-[#59B210] hover:bg-[#0E53A5] transition-all rounded-sm p-2 mt-3   font-semibold text-white ">
                     Quick View
