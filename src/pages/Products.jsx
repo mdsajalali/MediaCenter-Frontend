@@ -1,19 +1,31 @@
 import { useEffect, useState } from "react";
-import Container from "../components/Container";
 import { Link } from "react-router-dom";
+import Container from "../components/Container";
+
+// categories list
+const categories = ["all products", "camera", "phone", "laptop", "headphone"];
 
 const Products = () => {
   const [products, setProducts] = useState([]);
-  console.log(products)
+  const [category, setCategory] = useState("");
+  console.log(products);
 
   useEffect(() => {
     const fetchData = async () => {
-      await fetch("http://localhost:5000/products")
+      let url = "http://localhost:5000/products";
+      if (category !== "all products") {
+        url += `?category=${category}`;
+      }
+      await fetch(url)
         .then((res) => res.json())
         .then((data) => setProducts(data));
     };
     fetchData();
-  }, []);
+  }, [category]);
+
+  const addToCart = (id) => {
+    console.log(id);
+  };
 
   return (
     <>
@@ -23,14 +35,16 @@ const Products = () => {
 
       <Container>
         <div className="flex justify-end items-center mt-5">
-          <select className="select select-bordered w-full max-w-xs">
-            <option disabled selected>
-              Choose one
-            </option>
-            <option>Camera</option>
-            <option>Phone</option>
-            <option>Laptop</option>
-            <option>Headphone</option>
+          <select
+            onChange={(e) => setCategory(e.target.value)}
+            className="select select-bordered w-full max-w-xs"
+          >
+            <option disabled>Choose one</option>
+            {categories.map((item) => (
+              <option key={item} value={item}>
+                {item}
+              </option>
+            ))}
           </select>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10 mb-20">
@@ -58,9 +72,15 @@ const Products = () => {
                     Quick View
                   </button>
                 </Link>
-                <button className=" bg-[#59B210] hover:bg-[#0E53A5] transition-all rounded-sm p-2 mt-3   font-semibold text-white ">
-                  Add To Cart
-                </button>
+
+                <Link>
+                  <button
+                    onClick={() => addToCart(products)}
+                    className=" bg-[#59B210] hover:bg-[#0E53A5] transition-all rounded-sm p-2 mt-3   font-semibold text-white "
+                  >
+                    Add To Cart
+                  </button>
+                </Link>
               </div>
             </div>
           ))}
