@@ -4,7 +4,7 @@ import useAuth from "../../hooks/useAuth";
 const Navbar = () => {
   const { user, logOut } = useAuth();
   return (
-    <div className="w-full max-w-[1200px] mx-auto  px-3">
+    <div className="w-full max-w-[1300px] mx-auto  px-3">
       <div className="flex-none lg:hidden ">
         <label
           htmlFor="my-drawer-3"
@@ -26,7 +26,7 @@ const Navbar = () => {
           </svg>
         </label>
       </div>
-      <div className="flex-1 px-2 mx-2">
+      <div className="flex-1  ">
         <Link to="/">
           <img className="w-56" src={logo} alt="" />
         </Link>
