@@ -40,10 +40,6 @@ const Navbar = () => {
           <li>
             <Link to="/addProduct">Add Product</Link>
           </li>
-          <li>
-            <Link to="/myCart">My Cart</Link>
-          </li>
-
           {user?.email ? (
             <div className="dropdown dropdown-end ">
               <label tabIndex={0} className="cursor-pointer">

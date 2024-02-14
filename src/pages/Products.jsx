@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { FiEdit } from "react-icons/fi";
 import { MdDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 import Container from "../components/Container";
 
 // categories list
@@ -10,9 +11,10 @@ const categories = ["all products", "camera", "phone", "laptop", "headphone"];
 const Products = () => {
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState("");
-  console.log(products);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setLoading(true);
     const fetchData = async () => {
       let url = "http://localhost:5000/products";
       if (category !== "all products") {
@@ -20,27 +22,51 @@ const Products = () => {
       }
       await fetch(url)
         .then((res) => res.json())
-        .then((data) => setProducts(data));
+        .then((data) => {
+          setProducts(data);
+          setLoading(false);
+        });
     };
     fetchData();
   }, [category]);
 
-  const addToCart = (id) => {
-    console.log(id);
-  };
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center my-20">
+        <span className="loading loading-spinner  loading-lg  text-[#59B210]"></span>
+      </div>
+    );
+  }
 
   const deleteProduct = (id) => {
-    // console.log(id)
-    fetch(`http://localhost:5000/products/${id}`, { method: "DELETE" })
-      .then((res) => res.json())
-      .then((data) => {
-        const filteredProduct = products.filter(
-          (product) => product._id !== id
-        );
-        setProducts(filteredProduct);
-        alert("Product Deleted");
-        console.log(data);
-      });
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/products/${id}`, { method: "DELETE" })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data?.deletedCount > 0) {
+              Swal.fire({
+                title: "Product Deleted!",
+                text: "Product has been deleted.",
+                icon: "success",
+              });
+              const filteredProduct = products.filter(
+                (product) => product._id !== id
+              );
+              setProducts(filteredProduct);
+              console.log(data);
+            }
+          });
+      }
+    });
   };
 
   return (
@@ -83,31 +109,22 @@ const Products = () => {
                 <span>{product?.rating}</span>
               </div>
               <div className="flex items-center justify-center gap-5">
-                <Link to={`/updateProduct/${product._id}`}>
-                  <button className=" bg-[#59B210] hover:bg-[#0E53A5] transition-all rounded-sm p-2 mt-3   font-semibold text-white ">
-                    <FiEdit />
-                  </button>
-                </Link>
-                <button
-                  onClick={() => deleteProduct(product._id)}
-                  className=" bg-[#59B210] hover:bg-[#0E53A5] transition-all rounded-sm p-2 mt-3   font-semibold text-white "
-                >
-                  <MdDelete />
-                </button>
                 <Link to={`/productDetail/${product._id}`}>
                   <button className=" bg-[#59B210] hover:bg-[#0E53A5] transition-all rounded-sm p-2 mt-3   font-semibold text-white ">
                     Quick View
                   </button>
                 </Link>
-
-                <Link>
-                  <button
-                    onClick={() => addToCart(products)}
-                    className=" bg-[#59B210] hover:bg-[#0E53A5] transition-all rounded-sm p-2 mt-3   font-semibold text-white "
-                  >
-                    Add To Cart
+                <Link to={`/updateProduct/${product._id}`}>
+                  <button className=" bg-[#59B210] hover:bg-[#0E53A5] transition-all rounded-sm p-2 mt-3   font-semibold text-white flex items-center gap-1">
+                    Update <FiEdit />
                   </button>
                 </Link>
+                <button
+                  onClick={() => deleteProduct(product._id)}
+                  className=" bg-[#59B210] hover:bg-[#0E53A5] transition-all rounded-sm p-2 mt-3   font-semibold text-white flex items-center gap-1 "
+                >
+                  Delete <MdDelete />
+                </button>
               </div>
             </div>
           ))}

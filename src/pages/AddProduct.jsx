@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 const AddProduct = () => {
   const formSubmit = (e) => {
     e.preventDefault();
@@ -30,8 +31,15 @@ const AddProduct = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        alert("Product Added");
-        console.log(data);
+        if (data?.acknowledged) {
+          Swal.fire({
+            title: "Product Added Successfully!",
+            text: "You clicked the button!",
+            icon: "success",
+          });
+          console.log(data);
+          form.reset();
+        }
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -47,6 +55,7 @@ const AddProduct = () => {
               type="text"
               name="photo"
               placeholder="Photo"
+              required
             />
           </div>
           <div className="w-full md:w-1/2 px-3 mb-4">
@@ -55,6 +64,7 @@ const AddProduct = () => {
               type="text"
               name="name"
               placeholder="Name"
+              required
             />
           </div>
         </div>
@@ -65,12 +75,14 @@ const AddProduct = () => {
               type="text"
               name="brand"
               placeholder="Brand Name"
+              required
             />
           </div>
           <div className="w-full md:w-1/2 px-3 mb-4">
             <select
               className="w-full bg-gray-100 rounded-sm py-2 px-3 focus:outline-none focus:bg-white focus:ring-2 focus:ring-[#59B210] focus:border-transparent"
               name="category"
+              required
             >
               <option value="">Select Category</option>
               <option value="camera">Camera</option>
@@ -88,6 +100,7 @@ const AddProduct = () => {
               type="number"
               name="price"
               placeholder="Price"
+              required
             />
           </div>
           <div className="w-full md:w-1/2 px-3 mb-4">
@@ -96,6 +109,7 @@ const AddProduct = () => {
               type="number"
               name="rating"
               placeholder="Rating"
+              required
             />
           </div>
         </div>
@@ -104,6 +118,7 @@ const AddProduct = () => {
             className="w-full bg-gray-100 rounded-sm py-2 px-3 focus:outline-none focus:bg-white focus:ring-2 focus:ring-[#59B210] focus:border-transparent"
             name="description"
             placeholder="Description"
+            required
             rows="5"
           ></textarea>
         </div>

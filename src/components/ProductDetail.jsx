@@ -23,9 +23,6 @@ const ProductDetail = () => {
             <span className="text-yellow-500 mr-1">&#9733;</span>
             <span>{product?.rating}</span>
           </div>
-          <button className=" bg-[#59B210] hover:bg-[#0E53A5] transition-all w-full rounded-sm p-2 mt-3   font-semibold text-white ">
-            Add To Cart
-          </button>
         </div>
       </div>
     </Container>
