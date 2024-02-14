@@ -1,9 +1,10 @@
 import { FcGoogle } from "react-icons/fc";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 
 const Register = () => {
-  const { createUser } = useAuth();
+  const { createUser, googleLogin } = useAuth();
+  const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -16,6 +17,17 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         console.log(result.user);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+
+  const handleGoogleLogin = () => {
+    googleLogin()
+      .then((result) => {
+        console.log(result.user);
+        navigate("/");
       })
       .catch((error) => {
         console.log(error.message);
@@ -80,6 +92,7 @@ const Register = () => {
           </div>
           <div className="divider ">Or, Continue With</div>
           <button
+            onClick={handleGoogleLogin}
             type="button"
             className="btn bg-white text-black hover:bg-[#0E53A5]  w-full flex justify-between items-center cursor-pointer hover:text-white border-[#59B210]"
           >

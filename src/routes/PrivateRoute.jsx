@@ -11,7 +11,7 @@ const PrivateRoute = ({ children }) => {
       </div>
     );
   }
-  if (!user?.email) {
+  if (!loading && !user?.email) {
     return <Navigate to="/login" />;
   }
   return children;

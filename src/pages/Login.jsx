@@ -1,9 +1,10 @@
 import { FcGoogle } from "react-icons/fc";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 
 const Login = () => {
-  const { loginUser } = useAuth();
+  const { loginUser, googleLogin } = useAuth();
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -15,11 +16,24 @@ const Login = () => {
     loginUser(email, password)
       .then((result) => {
         console.log(result.user);
+        navigate("/");
       })
       .catch((error) => {
         console.log(error.message);
       });
   };
+
+  const handleGoogleLogin = () => {
+    googleLogin()
+      .then((result) => {
+        console.log(result.user);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+
   return (
     <div className="min-h-screen bg-base-200 flex justify-center items-center px-4">
       <div className="card flex-shrink-0 w-full max-w-md shadow-2xl bg-base-100">
@@ -67,6 +81,7 @@ const Login = () => {
           </div>
           <div className="divider ">Or, Continue With</div>
           <button
+            onClick={handleGoogleLogin}
             type="button"
             className="btn bg-white text-black hover:bg-[#0E53A5]  w-full flex justify-between items-center cursor-pointer hover:text-white border-[#59B210] "
           >
