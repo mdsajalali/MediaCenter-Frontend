@@ -4,8 +4,10 @@ import img1 from "../assets/images/brands/brand-01.jpg";
 import img2 from "../assets/images/brands/brand-02.jpg";
 import img3 from "../assets/images/brands/brand-03.jpg";
 import img4 from "../assets/images/brands/brand-04.jpg";
+import img5 from "../assets/images/brands/brand-02.jpg";
+import img6 from "../assets/images/brands/brand-03.jpg";
 
-const images = [img1, img2, img3, img4];
+const images = [img1, img2, img3, img4, img5, img6];
 
 const TopBrands = () => {
   return (
@@ -16,7 +18,7 @@ const TopBrands = () => {
         </h1>
         <Marquee>
           {images.map((img, id) => (
-            <img className="w-[200px] lg:ml-40" key={id} src={img} alt="" />
+            <img className="w-[200px] " key={id} src={img} alt="" />
           ))}
         </Marquee>
       </div>
