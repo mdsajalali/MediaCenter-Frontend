@@ -13,109 +13,180 @@ const Footer = () => {
   return (
     <footer className="bg-[#F9F9F9] pt-10">
       <Container>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 items-center">
-          <div>
-            <img className="w-60" src={logo} alt="" />
-            <h1 className="text-[18px] font-semibold my-3">
-              Feel Free To Contact Us Via Phone,Email Or Just Send Us Mail.
-            </h1>
-            <h2 className="text-[16px] font-semibold mb-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-10   items-center">
+          <div className="space-y-5">
+            <Link to="/">
+              <img className="w-48" src={logo} alt="Logo" />
+            </Link>
+            <p className="text-sm text-gray-600">
+              Feel Free To Contact Us Via Phone, Email Or Just Send Us Mail.
+            </p>
+            <p className="text-sm text-gray-600">
               17 Princess Road, London, Greater London NW1 8JR, UK 1-888-8MEDIA
               (1-888-892-9953)
-            </h2>
-            <div>
-              <h1 className="text-[18px] mb-3">Get In Touch</h1>
-              <div className="flex gap-4">
-                <FaFacebook className="w-6 h-6 rounded-full ring cursor-pointer ring-[#59B210]" />
-                <FaTwitter className="w-6 h-6 rounded-full ring cursor-pointer ring-[#59B210]" />
-                <FaLinkedin className="w-6 h-6 rounded-full ring cursor-pointer ring-[#59B210]" />
-                <FaPinterest className="w-6 h-6 rounded-full ring cursor-pointer ring-[#59B210]" />
-              </div>
+            </p>
+            <div className="flex gap-4">
+              <FaFacebook className="w-6 h-6 text-gray-600 hover:text-[#59B210] transition-colors cursor-pointer" />
+              <FaTwitter className="w-6 h-6 text-gray-600 hover:text-[#59B210] transition-colors cursor-pointer" />
+              <FaLinkedin className="w-6 h-6 text-gray-600 hover:text-[#59B210] transition-colors cursor-pointer" />
+              <FaPinterest className="w-6 h-6 text-gray-600 hover:text-[#59B210] transition-colors cursor-pointer" />
             </div>
           </div>
-          <div>
-            <h1 className="text-2xl">Find It Fast</h1>
-            <div className="flex flex-col">
-              <Link className="my-1" to="/">
+          <div className="space-y-5">
+            <h1 className="text-xl font-semibold">Find It Fast</h1>
+            <div className="flex flex-col space-y-1">
+              <Link
+                to="/"
+                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+              >
                 Laptops & Computers
               </Link>
-              <Link className="my-1" to="/">
+              <Link
+                to="/"
+                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+              >
                 Cameras & Photography
               </Link>
-              <Link className="my-1" to="/">
+              <Link
+                to="/"
+                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+              >
                 Smart Phones & Tablets
               </Link>
-              <Link className="my-1" to="/">
+              <Link
+                to="/"
+                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+              >
                 Video Games & Consoles
               </Link>
-              <Link className="my-1" to="/">
+              <Link
+                to="/"
+                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+              >
                 TV & Audio
               </Link>
-              <Link className="my-1" to="/">
+              <Link
+                to="/"
+                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+              >
                 Gadgets
               </Link>
-              <Link className="my-1" to="/">
+              <Link
+                to="/"
+                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+              >
                 Car Electronic & GPS
               </Link>
-              <Link className="my-1" to="/">
-                Accesories
+              <Link
+                to="/"
+                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+              >
+                Accessories
               </Link>
             </div>
           </div>
-          <div>
-            <h1 className="text-2xl">Information</h1>
-            <div className="flex flex-col">
-              <Link className="my-1" to="/">
+          <div className="space-y-5">
+            <h1 className="text-xl font-semibold">Information</h1>
+            <div className="flex flex-col space-y-1">
+              <Link
+                to="/"
+                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+              >
                 Find A Store
               </Link>
-              <Link className="my-1" to="/">
+              <Link
+                to="/"
+                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+              >
                 About Us
               </Link>
-              <Link className="my-1" to="/">
+              <Link
+                to="/"
+                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+              >
                 Contact Us
               </Link>
-              <Link className="my-1" to="/">
+              <Link
+                to="/"
+                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+              >
                 Weekly Deals
               </Link>
-              <Link className="my-1" to="/">
+              <Link
+                to="/"
+                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+              >
                 Gift Cards
               </Link>
-              <Link className="my-1" to="/">
+              <Link
+                to="/"
+                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+              >
                 Gadgets
               </Link>
-              <Link className="my-1" to="/">
+              <Link
+                to="/"
+                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+              >
                 Recycling Program
               </Link>
-              <Link className="my-1" to="/">
+              <Link
+                to="/"
+                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+              >
                 Community Careers
               </Link>
             </div>
           </div>
-          <div>
-            <h1 className="text-2xl">Information</h1>
-            <div className="flex flex-col">
-              <Link className="my-1" to="/">
+          <div className="space-y-5">
+            <h1 className="text-xl font-semibold">Account & Support</h1>
+            <div className="flex flex-col space-y-1">
+              <Link
+                to="/"
+                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+              >
                 My Account
               </Link>
-              <Link className="my-1" to="/">
+              <Link
+                to="/"
+                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+              >
                 Order Tracking
               </Link>
-              <Link className="my-1" to="/">
+              <Link
+                to="/"
+                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+              >
                 Wish List
               </Link>
-              <Link className="my-1" to="/">
+              <Link
+                to="/"
+                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+              >
                 Customer Service
               </Link>
-              <Link className="my-1" to="/">
+              <Link
+                to="/"
+                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+              >
                 Returns / Exchange
               </Link>
-              <Link className="my-1" to="/">
+              <Link
+                to="/"
+                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+              >
                 FAQs
               </Link>
-              <Link className="my-1" to="/">
+              <Link
+                to="/"
+                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+              >
                 Product Support
               </Link>
-              <Link className="my-1" to="/">
+              <Link
+                to="/"
+                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+              >
                 Extended Service Plans
               </Link>
             </div>
@@ -123,20 +194,19 @@ const Footer = () => {
         </div>
       </Container>
 
-      <div className=" bg-[#3D3D3D]">
-        <div className="max-w-[1200px] mx-auto px-4 flex flex-wrap items-center justify-between mt-10 py-2">
-          <div>
-            <p className="text-white">© Media Center - All Rights Reserved</p>
-          </div>
-          <div className="flex gap-2 py-4 ">
+      <div className="bg-gray-200 text-white">
+        <div className="max-w-[1200px] mx-auto px-4 gap-5 flex flex-wrap items-center justify-between mt-10 py-4">
+          <p className="text-sm text-black">
+            &copy; Media Center - All Rights Reserved
+          </p>
+          <div className="flex gap-2">
             {payments.map((payment, id) => (
-              <div key={id}>
-                <img
-                  className="w-16 h-8 rounded-md object-cover cursor-pointer bg-white"
-                  src={payment}
-                  alt={id}
-                />
-              </div>
+              <img
+                key={id}
+                className="w-16 h-8 object-contain border border-gray-700 rounded-md cursor-pointer"
+                src={payment}
+                alt={id}
+              />
             ))}
           </div>
         </div>

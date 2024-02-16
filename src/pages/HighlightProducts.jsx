@@ -43,7 +43,7 @@ const OnSaleProductsData = [
   },
   {
     id: 2,
-    heading: "Galaxy Tab 3 GT-P5210 16GB, Wi-Fi, 10.1in.",
+    heading: "Galaxy Tab 3 GT-P5210 16GB, Wi-Fi, 10.1in - White.",
     regular_price: "$1873",
     old_price: "$2000",
     img: feaImg5,
