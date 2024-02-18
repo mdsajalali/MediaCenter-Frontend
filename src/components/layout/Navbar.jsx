@@ -45,7 +45,11 @@ const Navbar = () => {
               <label tabIndex={0} className="cursor-pointer">
                 <div className="avatar">
                   <div className="w-10 rounded-full">
-                    <img src="https://w7.pngwing.com/pngs/178/595/png-transparent-user-profile-computer-icons-login-user-avatars-thumbnail.png" />
+                    {user?.photoURL ? (
+                      <img src={user?.photoURL} />
+                    ) : (
+                      <img src="https://w7.pngwing.com/pngs/178/595/png-transparent-user-profile-computer-icons-login-user-avatars-thumbnail.png" />
+                    )}
                   </div>
                 </div>
               </label>
