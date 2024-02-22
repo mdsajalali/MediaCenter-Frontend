@@ -2,8 +2,10 @@ import { FaShoppingCart } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 import useAuth from "../../hooks/useAuth";
+import useCart from "../../hooks/useCart";
 const Navbar = () => {
   const { user, logOut } = useAuth();
+  const [cart] = useCart();
   return (
     <div className="w-full max-w-[1300px] mx-auto  px-3">
       <div className="flex-none lg:hidden ">
@@ -49,7 +51,7 @@ const Navbar = () => {
                   <button className="flex items-center justify-center gap-2">
                     <FaShoppingCart size={20} />
                     <div className="badge bg-[#59B210] text-white font-semibold">
-                      +0
+                      +{cart.length}
                     </div>
                   </button>
                 </Link>

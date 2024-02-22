@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAuth from "../hooks/useAuth";
+import useCart from "../hooks/useCart";
 import useAxiosSecure from "./../hooks/useAxiosSecure";
 
 const ProductCart = ({ product }) => {
@@ -8,6 +9,7 @@ const ProductCart = ({ product }) => {
   const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
   const navigate = useNavigate();
+  const [, refetch] = useCart();
 
   const handleAddToCart = () => {
     if (user && user?.email) {
@@ -32,6 +34,7 @@ const ProductCart = ({ product }) => {
             showConfirmButton: false,
             timer: 1500,
           });
+          refetch();
         }
       });
     } else {
