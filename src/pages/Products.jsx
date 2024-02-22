@@ -1,8 +1,5 @@
 import { useEffect, useState } from "react";
-import { FiEdit } from "react-icons/fi";
-import { MdDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
-import Swal from "sweetalert2";
 import Container from "../components/Container";
 import useAuth from "../hooks/useAuth";
 
@@ -36,37 +33,6 @@ const Products = () => {
       </div>
     );
   }
-
-  const deleteProduct = (id) => {
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        fetch(`http://localhost:5000/products/${id}`, { method: "DELETE" })
-          .then((res) => res.json())
-          .then((data) => {
-            if (data?.deletedCount > 0) {
-              Swal.fire({
-                title: "Product Deleted!",
-                text: "Product has been deleted.",
-                icon: "success",
-              });
-              const filteredProduct = products.filter(
-                (product) => product._id !== id
-              );
-              setProducts(filteredProduct);
-              console.log(data);
-            }
-          });
-      }
-    });
-  };
 
   return (
     <>
@@ -113,16 +79,9 @@ const Products = () => {
                     Quick View
                   </button>
                 </Link>
-                <Link to={`/updateProduct/${product._id}`}>
-                  <button className=" bg-[#59B210] hover:bg-[#0E53A5] transition-all rounded-sm p-2 mt-3   font-semibold text-white flex items-center gap-1">
-                    Update <FiEdit />
-                  </button>
-                </Link>
-                <button
-                  onClick={() => deleteProduct(product._id)}
-                  className=" bg-[#59B210] hover:bg-[#0E53A5] transition-all rounded-sm p-2 mt-3   font-semibold text-white flex items-center gap-1 "
-                >
-                  Delete <MdDelete />
+
+                <button className=" bg-[#59B210] hover:bg-[#0E53A5] transition-all rounded-sm p-2 mt-3   font-semibold text-white flex items-center gap-1 ">
+                  Add To Cart
                 </button>
               </div>
             </div>
