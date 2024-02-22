@@ -1,3 +1,4 @@
+import { FaShoppingCart } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 import useAuth from "../../hooks/useAuth";
@@ -40,32 +41,45 @@ const Navbar = () => {
           <li>
             <Link to="/addProduct">Add Product</Link>
           </li>
+
           {user?.email ? (
-            <div className="dropdown dropdown-end ">
-              <label tabIndex={0} className="cursor-pointer">
-                <div className="avatar">
-                  <div className="w-10 rounded-full">
-                    {user?.photoURL ? (
-                      <img src={user?.photoURL} />
-                    ) : (
-                      <img src="https://w7.pngwing.com/pngs/178/595/png-transparent-user-profile-computer-icons-login-user-avatars-thumbnail.png" />
-                    )}
+            <>
+              <li>
+                <Link to="/dashboard/cart">
+                  <button className="flex items-center justify-center gap-2">
+                    <FaShoppingCart size={20} />
+                    <div className="badge bg-[#59B210] text-white font-semibold">
+                      +0
+                    </div>
+                  </button>
+                </Link>
+              </li>
+              <div className="dropdown dropdown-end ">
+                <label tabIndex={0} className="cursor-pointer">
+                  <div className="avatar">
+                    <div className="w-10 rounded-full">
+                      {user?.photoURL ? (
+                        <img src={user?.photoURL} />
+                      ) : (
+                        <img src="https://w7.pngwing.com/pngs/178/595/png-transparent-user-profile-computer-icons-login-user-avatars-thumbnail.png" />
+                      )}
+                    </div>
                   </div>
-                </div>
-              </label>
-              <div
-                tabIndex={0}
-                className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
-              >
-                <NavLink
-                  onClick={logOut}
-                  to="/"
-                  className="px-4 py-2 hover:bg-base-300 rounded-lg"
+                </label>
+                <div
+                  tabIndex={0}
+                  className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
                 >
-                  Logout
-                </NavLink>
+                  <NavLink
+                    onClick={logOut}
+                    to="/"
+                    className="px-4 py-2 hover:bg-base-300 rounded-lg"
+                  >
+                    Logout
+                  </NavLink>
+                </div>
               </div>
-            </div>
+            </>
           ) : (
             <NavLink
               to="/login"
