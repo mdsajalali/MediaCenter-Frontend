@@ -60,27 +60,26 @@ const Products = () => {
               key={product._id}
               className="bg-white rounded-lg shadow-md p-4"
             >
-              <img
-                src={product?.image}
-                alt={product?.name}
-                className="w-60 mx-auto h-40 object-cover mb-4 rounded-lg"
-              />
-              <h2 className="text-lg font-semibold mb-2">{product?.name}</h2>
-              <p className="text-gray-600 mb-2">{product?.brand}</p>
-              <p className="text-gray-800 font-bold mb-2">${product?.price}</p>
-              <p className="text-gray-600 mb-2">{product?.description}</p>
-              <div className="flex items-center">
-                <span className="text-yellow-500 mr-1">&#9733;</span>
-                <span>{product?.rating}</span>
-              </div>
+              <Link to={`/productDetail/${product._id}`}>
+                <img
+                  src={product?.image}
+                  alt={product?.name}
+                  className="w-60 mx-auto h-40 object-cover mb-4 rounded-lg"
+                />
+                <h2 className="text-lg font-semibold mb-2">{product?.name}</h2>
+                <p className="text-gray-600 mb-2">{product?.brand}</p>
+                <p className="text-gray-800 font-bold mb-2">
+                  ${product?.price}
+                </p>
+                <p className="text-gray-600 mb-2">{product?.description}</p>
+                <div className="flex items-center">
+                  <span className="text-yellow-500 mr-1">&#9733;</span>
+                  <span>{product?.rating}</span>
+                </div>
+                <hr className="mt-2" />
+              </Link>
               <div className="flex items-center justify-center gap-5">
-                <Link to={`/productDetail/${product._id}`}>
-                  <button className=" bg-[#59B210] hover:bg-[#0E53A5] transition-all rounded-sm p-2 mt-3   font-semibold text-white ">
-                    Quick View
-                  </button>
-                </Link>
-
-                <button className=" bg-[#59B210] hover:bg-[#0E53A5] transition-all rounded-sm p-2 mt-3   font-semibold text-white flex items-center gap-1 ">
+                <button className=" bg-[#59B210] hover:bg-[#0E53A5] transition-all rounded-md  px-5 py-2 mt-3   font-semibold text-white  gap-1 ">
                   Add To Cart
                 </button>
               </div>
