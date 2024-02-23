@@ -34,10 +34,6 @@ const Products = () => {
     );
   }
 
-  const handleAddToCart = (id) => {
-    console.log(id, products);
-  };
-
   return (
     <>
       <h1 className="text-3xl font-semibold pb-1 border-[#59B210] border-b-[3px]   w-[120px] mx-auto">

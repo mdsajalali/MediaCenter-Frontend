@@ -4,8 +4,10 @@ import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import useCart from "./../../../hooks/useCart";
 const Cart = () => {
   const [cart, refetch] = useCart();
-  // console.log(cart);
-  const totalPrice = cart.reduce((total, item) => total + item.price, 0);
+  const totalPrice = cart.reduce(
+    (total, item) => total + Number(item.price),
+    0
+  );
   const axiosSecure = useAxiosSecure();
   const handleDelete = (id) => {
     Swal.fire({
@@ -32,8 +34,8 @@ const Cart = () => {
     });
   };
   return (
-    <div className="my-10">
-      <div className="flex items-center justify-evenly gap-10 ">
+    <div className="md:my-10 mb-5 px-4">
+      <div className="flex flex-wrap items-center justify-evenly md:gap-10 gap-2 ">
         <h1 className="uppercase text-2xl">Total Order: {cart.length} </h1>
         <h2 className="uppercase text-2xl">Total Price: ${totalPrice}</h2>
 

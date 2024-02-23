@@ -3,8 +3,8 @@ import { Link, Outlet } from "react-router-dom";
 const Dashboard = () => {
   return (
     <>
-      <div className="flex gap-10">
-        <div className="w-72 bg-[#F9F9F9] min-h-screen p-5 ">
+      <div className="grid grid-cols-12  gap-5">
+        <div className=" xl:col-span-2 lg:col-span-3 md:col-span-4 col-span-12 bg-[#F9F9F9] md:min-h-screen p-5  ">
           <div>
             <Link
               to="/"
@@ -24,7 +24,7 @@ const Dashboard = () => {
             </Link>
           </div>
         </div>
-        <div className="w-full">
+        <div className="w-full xl:col-span-10 lg:col-span-9 md:col-span-8 col-span-12">
           <Outlet />
         </div>
       </div>
