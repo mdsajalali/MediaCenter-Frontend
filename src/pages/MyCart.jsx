@@ -1,8 +1,8 @@
 import { FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
-import useAxiosSecure from "../../../hooks/useAxiosSecure";
-import useCart from "./../../../hooks/useCart";
-const Cart = () => {
+import useAxiosSecure from "../hooks/useAxiosSecure";
+import useCart from "../hooks/useCart";
+const MyCart = () => {
   const [cart, refetch] = useCart();
   const totalPrice = cart.reduce(
     (total, item) => total + Number(item.price),
@@ -34,35 +34,36 @@ const Cart = () => {
     });
   };
   return (
-    <div className="md:my-10 mb-5 px-4">
-      <div className="flex flex-wrap items-center justify-evenly md:gap-10 gap-2 ">
-        <h1 className="uppercase text-2xl">Total Order: {cart.length} </h1>
-        <h2 className="uppercase text-2xl">Total Price: ${totalPrice}</h2>
+    <div className="max-w-[1200px] mx-auto px-4 my-10">
+      <div className="flex flex-wrap items-center justify-between md:gap-10 gap-2 mb-10">
+        <h1 className="uppercase text-2xl font-semibold md:w-auto w-full">
+          Total Order: {cart.length}
+        </h1>
+        <h2 className="uppercase text-2xl font-semibold md:w-auto w-full">
+          Total Price: ${totalPrice}
+        </h2>
 
-        <button className="flex items-center  gap-2 bg-[#59B210]  px-5 py-2 text-white  hover:bg-[#0E53A5] transition-all rounded-md">
+        <button className="flex items-center gap-2 bg-[#59B210] px-5 py-2 text-white hover:bg-[#0E53A5] transition-all rounded-md md:w-auto w-full">
           Pay
         </button>
       </div>
-      {/* table item show */}
       <div className="overflow-x-auto">
-        <table className="table">
-          {/* head */}
+        <table className="table w-full">
           <thead>
             <tr>
-              <th>Id</th>
-              <th>Image</th>
-              <th>Name</th>
-              <th>Price</th>
-              <th>Brand</th>
-              <th>Action</th>
+              <th className="w-1/6">Id</th>
+              <th className="w-1/6">Image</th>
+              <th className="w-2/6">Name</th>
+              <th className="w-1/6">Price</th>
+              <th className="w-1/6">Brand</th>
+              <th className="w-1/6">Action</th>
             </tr>
           </thead>
           <tbody>
-            {/* row 1 */}
             {cart.map((item, idx) => (
               <tr key={item._id}>
-                <th>{idx + 1}</th>
-                <td>
+                <th className="w-1/6">{idx + 1}</th>
+                <td className="w-1/6">
                   <div className="flex items-center gap-3">
                     <div className="avatar">
                       <div className="mask mask-squircle w-12 h-12">
@@ -71,15 +72,18 @@ const Cart = () => {
                     </div>
                   </div>
                 </td>
-                <td>
+                <td className="w-2/6">
                   <div>
                     <div className="font-bold">{item.name}</div>
-                    <div className="text-sm opacity-50">{item.rating}</div>
+                    <div className="flex items-center">
+                      <span className="text-yellow-500 mr-1">&#9733;</span>
+                      <span>{item.rating}</span>
+                    </div>
                   </div>
                 </td>
-                <td>${item.price}</td>
-                <td>{item.brand}</td>
-                <th>
+                <td className="w-1/6">${item.price}</td>
+                <td className="w-1/6">{item.brand}</td>
+                <th className="w-1/6">
                   <button
                     onClick={() => handleDelete(item._id)}
                     className="btn btn-ghost btn-xs"
@@ -96,4 +100,4 @@ const Cart = () => {
   );
 };
 
-export default Cart;
+export default MyCart;

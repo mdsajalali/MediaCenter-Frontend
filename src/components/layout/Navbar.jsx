@@ -47,7 +47,7 @@ const Navbar = () => {
           {user?.email ? (
             <>
               <li>
-                <Link to="/dashboard/cart">
+                <Link to="/myCart">
                   <button className="flex items-center justify-center gap-2">
                     <FaShoppingCart size={20} />
                     <div className="badge bg-[#59B210] text-white font-semibold">
