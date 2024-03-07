@@ -1,13 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import ProductDetail from "../components/ProductDetail";
-import AddProduct from "../pages/AddProduct";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import MyCart from "../pages/MyCart";
+import Products from "../pages/Products";
 import Register from "../pages/Register";
 import PrivateRoute from "./PrivateRoute";
-import Products from "../pages/Products";
 
 const router = createBrowserRouter([
   {
@@ -20,13 +19,9 @@ const router = createBrowserRouter([
       },
       {
         path: "/products",
-        element: <Products />,
-      },
-      {
-        path: "/addProduct",
         element: (
           <PrivateRoute>
-            <AddProduct />
+            <Products />
           </PrivateRoute>
         ),
       },

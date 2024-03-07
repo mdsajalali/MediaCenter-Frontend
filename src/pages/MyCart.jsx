@@ -48,7 +48,7 @@ const MyCart = () => {
         </button>
       </div>
       <div className="overflow-x-auto">
-        <table className="table w-full">
+        <table className="table">
           <thead>
             <tr>
               <th className="w-1/6">Id</th>
