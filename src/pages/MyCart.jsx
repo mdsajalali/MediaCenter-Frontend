@@ -42,10 +42,6 @@ const MyCart = () => {
         <h2 className="uppercase text-2xl font-semibold md:w-auto w-full">
           Total Price: ${totalPrice}
         </h2>
-
-        <button className="flex items-center gap-2 bg-[#59B210] px-5 py-2 text-white hover:bg-[#0E53A5] transition-all rounded-md md:w-auto w-full">
-          Pay
-        </button>
       </div>
       <div className="overflow-x-auto">
         <table className="table">
