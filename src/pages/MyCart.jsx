@@ -5,7 +5,7 @@ import useCart from "../hooks/useCart";
 const MyCart = () => {
   const [cart, refetch] = useCart();
   const totalPrice = cart.reduce(
-    (total, item) => total + Number(item.price),
+    (total, item) => total + Number(item.productId?.price || 0),
     0
   );
   const axiosSecure = useAxiosSecure();
@@ -21,7 +21,7 @@ const MyCart = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axiosSecure.delete(`/carts/${id}`).then((res) => {
-          if (res.data.deletedCount > 0) {
+          if (res.status === 200) {
             refetch();
             Swal.fire({
               title: "Deleted!",
@@ -63,22 +63,22 @@ const MyCart = () => {
                   <div className="flex items-center gap-3">
                     <div className="avatar">
                       <div className="mask mask-squircle w-12 h-12">
-                        <img src={item.image} alt="" />
+                        <img src={item.productId?.image} alt="" />
                       </div>
                     </div>
                   </div>
                 </td>
                 <td className="w-2/6">
                   <div>
-                    <div className="font-bold">{item.name}</div>
+                    <div className="font-bold">{item.productId?.name}</div>
                     <div className="flex items-center">
                       <span className="text-yellow-500 mr-1">&#9733;</span>
-                      <span>{item.rating}</span>
+                      <span>{item.productId?.rating}</span>
                     </div>
                   </div>
                 </td>
-                <td className="w-1/6">${item.price}</td>
-                <td className="w-1/6">{item.brand}</td>
+                <td className="w-1/6">${item.productId?.price}</td>
+                <td className="w-1/6">{item.productId?.brand}</td>
                 <th className="w-1/6">
                   <button
                     onClick={() => handleDelete(item._id)}

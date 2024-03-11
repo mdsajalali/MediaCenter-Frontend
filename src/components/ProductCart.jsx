@@ -14,19 +14,14 @@ const ProductCart = ({ product }) => {
   const handleAddToCart = () => {
     if (user && user?.email) {
       const cartItem = {
-        menuId: _id,
+        productId: _id,
         email: user.email,
-        name,
-        image,
-        price,
-        brand,
-        description,
-        rating,
+        quantity: 1,
       };
       console.log(cartItem);
       axiosSecure.post("/carts", cartItem).then((res) => {
         console.log(res.data);
-        if (res.data.insertedId) {
+        if (res.status === 200) {
           Swal.fire({
             position: "top-center",
             icon: "success",
@@ -55,7 +50,7 @@ const ProductCart = ({ product }) => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-4">
+    <div className="bg-white rounded-lg shadow-md p-4 flex flex-col justify-between">
       <Link to={`/productDetail/${_id}`}>
         <img
           src={image}
@@ -70,9 +65,8 @@ const ProductCart = ({ product }) => {
           <span className="text-yellow-500 mr-1">&#9733;</span>
           <span>{rating}</span>
         </div>
-        <hr className="mt-2" />
       </Link>
-      <div className="flex items-center justify-center gap-5">
+      <div className="flex items-center justify-center flex-col border-t mt-5 mb-2 gap-5">
         <button
           onClick={handleAddToCart}
           className=" bg-[#59B210] hover:bg-[#0E53A5] transition-all rounded-md  px-5 py-2 mt-3   font-semibold text-white  gap-1 "
