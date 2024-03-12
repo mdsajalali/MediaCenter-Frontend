@@ -8,7 +8,7 @@ import {
   signOut,
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
-import app from "../firebase/firebase.config";
+import app from './../firebase/firebase.config';
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 export const AuthContext = createContext(null);
@@ -28,8 +28,8 @@ const AuthProviders = ({ children }) => {
   };
 
   const googleLogin = () => {
-     return signInWithPopup(auth, googleProvider);
-  }
+    return signInWithPopup(auth, googleProvider);
+  };
 
   const logOut = () => {
     setLoading(true);
