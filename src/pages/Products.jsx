@@ -13,7 +13,8 @@ const Products = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      let url = "http://localhost:5000/api/v1/products";
+      let url =
+        "https://media-center-api.vercel.app/api/v1/products";
       if (category !== "all products") {
         url += `?category=${category}`;
       }

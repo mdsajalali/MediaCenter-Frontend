@@ -41,7 +41,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/api/v1/products/${params.id}`),
+          fetch(
+            `https://media-center-api.vercel.app/api/v1/products/${params.id}`
+          ),
       },
     ],
   },
