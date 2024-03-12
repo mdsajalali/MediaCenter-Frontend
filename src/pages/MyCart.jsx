@@ -4,10 +4,9 @@ import useAxiosSecure from "../hooks/useAxiosSecure";
 import useCart from "../hooks/useCart";
 const MyCart = () => {
   const [cart, refetch] = useCart();
-  const totalPrice = cart.reduce(
-    (total, item) => total + Number(item.productId?.price || 0),
-    0
-  );
+  const totalPrice = cart
+    .reduce((total, item) => total + Number(item.productId?.price || 0), 0)
+    .toFixed(2);
   const axiosSecure = useAxiosSecure();
   const handleDelete = (id) => {
     Swal.fire({
