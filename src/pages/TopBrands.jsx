@@ -17,7 +17,7 @@ const TopBrands = () => {
   return (
     <Container>
       <div className="my-10">
-        <h1 className="text-3xl font-semibold pb-1 border-[#59B210] border-b-[3px]   md:text-3xl   mb-10 text-gray-500    w-[152px] mx-auto">
+        <h1 className="mx-auto mb-10 w-[152px] border-b-[3px] border-[#59B210]   pb-1   text-3xl font-semibold    text-gray-500 md:text-3xl">
           Top Brands
         </h1>
         <Marquee>

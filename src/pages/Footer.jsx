@@ -13,7 +13,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#F9F9F9] pt-10">
       <Container>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-10   items-center">
+        <div className="grid grid-cols-1 items-center gap-10 sm:grid-cols-2 md:grid-cols-4   lg:grid-cols-4">
           <div className="space-y-5">
             <Link to="/">
               <img className="w-48" src={logo} alt="Logo" />
@@ -26,10 +26,10 @@ const Footer = () => {
               (1-888-892-9953)
             </p>
             <div className="flex gap-4">
-              <FaFacebook className="w-6 h-6 text-gray-600 hover:text-[#59B210] transition-colors cursor-pointer" />
-              <FaTwitter className="w-6 h-6 text-gray-600 hover:text-[#59B210] transition-colors cursor-pointer" />
-              <FaLinkedin className="w-6 h-6 text-gray-600 hover:text-[#59B210] transition-colors cursor-pointer" />
-              <FaPinterest className="w-6 h-6 text-gray-600 hover:text-[#59B210] transition-colors cursor-pointer" />
+              <FaFacebook className="h-6 w-6 cursor-pointer text-gray-600 transition-colors hover:text-[#59B210]" />
+              <FaTwitter className="h-6 w-6 cursor-pointer text-gray-600 transition-colors hover:text-[#59B210]" />
+              <FaLinkedin className="h-6 w-6 cursor-pointer text-gray-600 transition-colors hover:text-[#59B210]" />
+              <FaPinterest className="h-6 w-6 cursor-pointer text-gray-600 transition-colors hover:text-[#59B210]" />
             </div>
           </div>
           <div className="space-y-5">
@@ -37,49 +37,49 @@ const Footer = () => {
             <div className="flex flex-col space-y-1">
               <Link
                 to="/"
-                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+                className="text-sm text-gray-600 transition-colors hover:text-[#59B210]"
               >
                 Laptops & Computers
               </Link>
               <Link
                 to="/"
-                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+                className="text-sm text-gray-600 transition-colors hover:text-[#59B210]"
               >
                 Cameras & Photography
               </Link>
               <Link
                 to="/"
-                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+                className="text-sm text-gray-600 transition-colors hover:text-[#59B210]"
               >
                 Smart Phones & Tablets
               </Link>
               <Link
                 to="/"
-                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+                className="text-sm text-gray-600 transition-colors hover:text-[#59B210]"
               >
                 Video Games & Consoles
               </Link>
               <Link
                 to="/"
-                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+                className="text-sm text-gray-600 transition-colors hover:text-[#59B210]"
               >
                 TV & Audio
               </Link>
               <Link
                 to="/"
-                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+                className="text-sm text-gray-600 transition-colors hover:text-[#59B210]"
               >
                 Gadgets
               </Link>
               <Link
                 to="/"
-                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+                className="text-sm text-gray-600 transition-colors hover:text-[#59B210]"
               >
                 Car Electronic & GPS
               </Link>
               <Link
                 to="/"
-                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+                className="text-sm text-gray-600 transition-colors hover:text-[#59B210]"
               >
                 Accessories
               </Link>
@@ -90,49 +90,49 @@ const Footer = () => {
             <div className="flex flex-col space-y-1">
               <Link
                 to="/"
-                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+                className="text-sm text-gray-600 transition-colors hover:text-[#59B210]"
               >
                 Find A Store
               </Link>
               <Link
                 to="/"
-                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+                className="text-sm text-gray-600 transition-colors hover:text-[#59B210]"
               >
                 About Us
               </Link>
               <Link
                 to="/"
-                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+                className="text-sm text-gray-600 transition-colors hover:text-[#59B210]"
               >
                 Contact Us
               </Link>
               <Link
                 to="/"
-                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+                className="text-sm text-gray-600 transition-colors hover:text-[#59B210]"
               >
                 Weekly Deals
               </Link>
               <Link
                 to="/"
-                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+                className="text-sm text-gray-600 transition-colors hover:text-[#59B210]"
               >
                 Gift Cards
               </Link>
               <Link
                 to="/"
-                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+                className="text-sm text-gray-600 transition-colors hover:text-[#59B210]"
               >
                 Gadgets
               </Link>
               <Link
                 to="/"
-                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+                className="text-sm text-gray-600 transition-colors hover:text-[#59B210]"
               >
                 Recycling Program
               </Link>
               <Link
                 to="/"
-                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+                className="text-sm text-gray-600 transition-colors hover:text-[#59B210]"
               >
                 Community Careers
               </Link>
@@ -143,49 +143,49 @@ const Footer = () => {
             <div className="flex flex-col space-y-1">
               <Link
                 to="/"
-                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+                className="text-sm text-gray-600 transition-colors hover:text-[#59B210]"
               >
                 My Account
               </Link>
               <Link
                 to="/"
-                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+                className="text-sm text-gray-600 transition-colors hover:text-[#59B210]"
               >
                 Order Tracking
               </Link>
               <Link
                 to="/"
-                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+                className="text-sm text-gray-600 transition-colors hover:text-[#59B210]"
               >
                 Wish List
               </Link>
               <Link
                 to="/"
-                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+                className="text-sm text-gray-600 transition-colors hover:text-[#59B210]"
               >
                 Customer Service
               </Link>
               <Link
                 to="/"
-                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+                className="text-sm text-gray-600 transition-colors hover:text-[#59B210]"
               >
                 Returns / Exchange
               </Link>
               <Link
                 to="/"
-                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+                className="text-sm text-gray-600 transition-colors hover:text-[#59B210]"
               >
                 FAQs
               </Link>
               <Link
                 to="/"
-                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+                className="text-sm text-gray-600 transition-colors hover:text-[#59B210]"
               >
                 Product Support
               </Link>
               <Link
                 to="/"
-                className="text-sm text-gray-600 hover:text-[#59B210] transition-colors"
+                className="text-sm text-gray-600 transition-colors hover:text-[#59B210]"
               >
                 Extended Service Plans
               </Link>
@@ -195,7 +195,7 @@ const Footer = () => {
       </Container>
 
       <div className="bg-gray-200 text-white">
-        <div className="max-w-[1200px] mx-auto px-4 gap-5 flex flex-wrap items-center justify-between mt-10 py-4">
+        <div className="mx-auto mt-10 flex max-w-[1200px] flex-wrap items-center justify-between gap-5 px-4 py-4">
           <p className="text-sm text-black">
             &copy; Media Center - All Rights Reserved
           </p>
@@ -203,7 +203,7 @@ const Footer = () => {
             {payments.map((payment, id) => (
               <img
                 key={id}
-                className="w-16 h-8 object-contain border border-gray-700 rounded-md cursor-pointer"
+                className="h-8 w-16 cursor-pointer rounded-md border border-gray-700 object-contain"
                 src={payment}
                 alt={id}
               />

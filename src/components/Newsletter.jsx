@@ -1,13 +1,13 @@
 const Newsletter = () => {
   return (
     <div className="bg-[#F9F9F9]">
-      <div className="max-w-[300px] md:max-w-[700px] mx-auto flex   -mt-8">
+      <div className="mx-auto -mt-8 flex max-w-[300px]   md:max-w-[700px]">
         <input
-          className="border outline-none w-full rounded-l-md px-3 py-3"
+          className="w-full rounded-l-md border px-3 py-3 outline-none"
           type="text"
           placeholder="Subscribe to our newsletter"
         />
-        <button className=" bg-[#59B210] hover:bg-[#0E53A5] transition-all rounded-r-md px-2 md:px-5 font-semibold text-white ">
+        <button className=" rounded-r-md bg-[#59B210] px-2 font-semibold text-white transition-all hover:bg-[#0E53A5] md:px-5 ">
           Subscribe
         </button>
       </div>

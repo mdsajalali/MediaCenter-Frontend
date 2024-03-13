@@ -7,7 +7,7 @@ const Navbar = () => {
   const { user, logOut } = useAuth();
   const [cart] = useCart();
   return (
-    <div className="w-full max-w-[1300px] mx-auto  px-3">
+    <div className="mx-auto w-full max-w-[1300px]  px-3">
       <div className="flex-none lg:hidden ">
         <label
           htmlFor="my-drawer-3"
@@ -18,7 +18,7 @@ const Navbar = () => {
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            className="inline-block w-6 h-6 stroke-current"
+            className="inline-block h-6 w-6 stroke-current"
           >
             <path
               strokeLinecap="round"
@@ -34,7 +34,7 @@ const Navbar = () => {
           <img className="w-56" src={logo} alt="" />
         </Link>
       </div>
-      <div className="flex-none hidden lg:block">
+      <div className="hidden flex-none lg:block">
         <ul className="menu menu-horizontal">
           {/* Navbar menu content here */}
           <li>
@@ -50,7 +50,7 @@ const Navbar = () => {
                 <Link to="/myCart">
                   <button className="flex items-center justify-center gap-2">
                     <FaShoppingCart size={20} />
-                    <div className="badge bg-[#59B210] text-white font-semibold">
+                    <div className="badge bg-[#59B210] font-semibold text-white">
                       +{cart.length}
                     </div>
                   </button>
@@ -70,12 +70,12 @@ const Navbar = () => {
                 </label>
                 <div
                   tabIndex={0}
-                  className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+                  className="menu dropdown-content z-[1] w-52 rounded-box bg-base-100 p-2 shadow"
                 >
                   <NavLink
                     onClick={logOut}
                     to="/"
-                    className="px-4 py-2 hover:bg-base-300 rounded-lg"
+                    className="rounded-lg px-4 py-2 hover:bg-base-300"
                   >
                     Logout
                   </NavLink>
@@ -85,7 +85,7 @@ const Navbar = () => {
           ) : (
             <NavLink
               to="/login"
-              className="px-4 py-2 hover:bg-base-300 rounded-lg"
+              className="rounded-lg px-4 py-2 hover:bg-base-300"
             >
               Login
             </NavLink>

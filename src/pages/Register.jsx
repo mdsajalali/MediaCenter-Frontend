@@ -34,8 +34,8 @@ const Register = () => {
       });
   };
   return (
-    <div className="min-h-screen bg-base-200 flex justify-center items-center px-4">
-      <div className="card flex-shrink-0 w-full max-w-md shadow-2xl bg-base-100">
+    <div className="flex min-h-screen items-center justify-center bg-base-200 px-4">
+      <div className="card w-full max-w-md flex-shrink-0 bg-base-100 shadow-2xl">
         <form className="card-body" onSubmit={handleRegister}>
           <div className="form-control">
             <label className="label">
@@ -77,7 +77,7 @@ const Register = () => {
             Already have an account ?{" "}
             <NavLink
               to="/login"
-              className="text-[#59B210] font-bold hover:underline cursor-pointer "
+              className="cursor-pointer font-bold text-[#59B210] hover:underline "
             >
               Login
             </NavLink>
@@ -94,10 +94,10 @@ const Register = () => {
           <button
             onClick={handleGoogleLogin}
             type="button"
-            className="btn bg-white text-black hover:bg-[#0E53A5]  w-full flex justify-between items-center cursor-pointer hover:text-white border-[#59B210]"
+            className="btn flex w-full cursor-pointer  items-center justify-between border-[#59B210] bg-white text-black hover:bg-[#0E53A5] hover:text-white"
           >
             Google
-            <FcGoogle className="w-8 h-8" />
+            <FcGoogle className="h-8 w-8" />
           </button>
         </form>
       </div>

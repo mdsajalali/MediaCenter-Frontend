@@ -33,12 +33,12 @@ const MyCart = () => {
     });
   };
   return (
-    <div className="max-w-[1200px] mx-auto px-4 my-10">
-      <div className="flex flex-wrap items-center justify-between md:gap-10 gap-2 mb-10">
-        <h1 className="uppercase text-2xl font-semibold md:w-auto w-full">
+    <div className="mx-auto my-10 max-w-[1200px] px-4">
+      <div className="mb-10 flex flex-wrap items-center justify-between gap-2 md:gap-10">
+        <h1 className="w-full text-2xl font-semibold uppercase md:w-auto">
           Total Order: {cart.length}
         </h1>
-        <h2 className="uppercase text-2xl font-semibold md:w-auto w-full">
+        <h2 className="w-full text-2xl font-semibold uppercase md:w-auto">
           Total Price: ${totalPrice}
         </h2>
       </div>
@@ -61,7 +61,7 @@ const MyCart = () => {
                 <td className="w-1/6">
                   <div className="flex items-center gap-3">
                     <div className="avatar">
-                      <div className="mask mask-squircle w-12 h-12">
+                      <div className="mask mask-squircle h-12 w-12">
                         <img src={item.productId?.image} alt="" />
                       </div>
                     </div>
@@ -71,7 +71,7 @@ const MyCart = () => {
                   <div>
                     <div className="font-bold">{item.productId?.name}</div>
                     <div className="flex items-center">
-                      <span className="text-yellow-500 mr-1">&#9733;</span>
+                      <span className="mr-1 text-yellow-500">&#9733;</span>
                       <span>{item.productId?.rating}</span>
                     </div>
                   </div>

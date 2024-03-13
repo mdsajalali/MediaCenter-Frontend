@@ -42,7 +42,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://media-center-api.vercel.app/api/v1/products/${params.id}`
+            `https://media-center-api.vercel.app/api/v1/products/${params.id}`,
           ),
       },
     ],

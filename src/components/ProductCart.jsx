@@ -18,9 +18,7 @@ const ProductCart = ({ product }) => {
         email: user.email,
         quantity: 1,
       };
-      console.log(cartItem);
       axiosSecure.post("/carts", cartItem).then((res) => {
-        console.log(res.data);
         if (res.status === 200) {
           Swal.fire({
             position: "top-center",

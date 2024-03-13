@@ -10,17 +10,17 @@ const ProductDetail = () => {
         <div>
           <img className="w-96 object-cover" src={product.image} alt="" />
         </div>
-        <div className="max-w-[500px] border p-5 rounded-lg">
-          <h2 className="text-2xl font-semibold mb-2">{product?.name}</h2>
-          <p className="text-gray-600 mb-2 uppercase">
+        <div className="max-w-[500px] rounded-lg border p-5">
+          <h2 className="mb-2 text-2xl font-semibold">{product?.name}</h2>
+          <p className="mb-2 uppercase text-gray-600">
             Brand: {product?.brand}
           </p>
-          <p className="text-gray-800 font-bold mb-2">${product?.price}</p>
-          <p className="text-gray-600 mb-2 text-[18px]">
+          <p className="mb-2 font-bold text-gray-800">${product?.price}</p>
+          <p className="mb-2 text-[18px] text-gray-600">
             {product?.description}
           </p>
           <div className="flex items-center">
-            <span className="text-yellow-500 mr-1">&#9733;</span>
+            <span className="mr-1 text-yellow-500">&#9733;</span>
             <span>{product?.rating}</span>
           </div>
         </div>

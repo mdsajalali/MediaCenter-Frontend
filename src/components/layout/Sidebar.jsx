@@ -1,13 +1,13 @@
+import { FaShoppingCart } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
-import { FaShoppingCart } from "react-icons/fa";
 import useCart from "../../hooks/useCart";
 
 const Sidebar = () => {
   const { user, logOut } = useAuth();
   const [cart] = useCart();
   return (
-    <div className="my-5 z-[9999]">
+    <div className="z-[9999] my-5">
       <li>
         <Link to="/">Home</Link>
       </li>
@@ -21,7 +21,7 @@ const Sidebar = () => {
             <Link to="/myCart">
               <button className="flex items-center justify-center gap-2">
                 <FaShoppingCart size={20} />
-                <div className="badge bg-[#59B210] text-white font-semibold">
+                <div className="badge bg-[#59B210] font-semibold text-white">
                   +{cart.length}
                 </div>
               </button>
@@ -41,12 +41,12 @@ const Sidebar = () => {
             </label>
             <div
               tabIndex={0}
-              className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu dropdown-content z-[1] w-52 rounded-box bg-base-100 p-2 shadow"
             >
               <NavLink
                 onClick={logOut}
                 to="/"
-                className="px-4 py-2 hover:bg-base-300 rounded-lg"
+                className="rounded-lg px-4 py-2 hover:bg-base-300"
               >
                 Logout
               </NavLink>
@@ -54,7 +54,7 @@ const Sidebar = () => {
           </div>
         </div>
       ) : (
-        <NavLink to="/login" className="px-4 py-2 hover:bg-base-300 rounded-lg">
+        <NavLink to="/login" className="rounded-lg px-4 py-2 hover:bg-base-300">
           Login
         </NavLink>
       )}

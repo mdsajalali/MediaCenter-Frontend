@@ -83,23 +83,23 @@ const TopRatedProductsData = [
 const HighlightProducts = () => {
   return (
     <>
-      <div className="bg-[#F9F9F9] border-t border-b">
+      <div className="border-b border-t bg-[#F9F9F9]">
         <Container>
-          <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3   gap-10 pt-14 pb-20">
+          <div className="grid grid-cols-1  gap-10 pb-20   pt-14 md:grid-cols-2 lg:grid-cols-3">
             <div>
-              <h1 className="text-2xl font-semibold text-[#59B210] border-b pb-2">
+              <h1 className="border-b pb-2 text-2xl font-semibold text-[#59B210]">
                 Featured Products
               </h1>
               {FeaturedProductsData.map((product) => (
                 <div
                   key={product.id}
-                  className="flex items-center justify-between gap-5 my-5 "
+                  className="my-5 flex items-center justify-between gap-5 "
                 >
                   <div>
-                    <h1 className="text-[#0E53A5] hover:text-[#59B210] transition-all cursor-pointer font-semibold">
+                    <h1 className="cursor-pointer font-semibold text-[#0E53A5] transition-all hover:text-[#59B210]">
                       {product.heading}
                     </h1>
-                    <span className="line-through mr-2 text-gray-500">
+                    <span className="mr-2 text-gray-500 line-through">
                       {product.old_price}
                     </span>
                     <span>{product.regular_price}</span>
@@ -111,19 +111,19 @@ const HighlightProducts = () => {
               ))}
             </div>
             <div>
-              <h1 className="text-2xl font-semibold text-[#59B210] border-b pb-2">
+              <h1 className="border-b pb-2 text-2xl font-semibold text-[#59B210]">
                 On-Sale Products
               </h1>
               {OnSaleProductsData.map((product) => (
                 <div
                   key={product.id}
-                  className="flex items-center justify-between gap-5 my-5 "
+                  className="my-5 flex items-center justify-between gap-5 "
                 >
                   <div>
-                    <h1 className="text-[#0E53A5] hover:text-[#59B210] transition-all cursor-pointer font-semibold">
+                    <h1 className="cursor-pointer font-semibold text-[#0E53A5] transition-all hover:text-[#59B210]">
                       {product.heading}
                     </h1>
-                    <span className="line-through mr-2 text-gray-500">
+                    <span className="mr-2 text-gray-500 line-through">
                       {product.old_price}
                     </span>
                     <span>{product.regular_price}</span>
@@ -135,19 +135,19 @@ const HighlightProducts = () => {
               ))}
             </div>
             <div>
-              <h1 className="text-2xl font-semibold text-[#59B210] border-b pb-2">
+              <h1 className="border-b pb-2 text-2xl font-semibold text-[#59B210]">
                 Top Rated Products
               </h1>
               {TopRatedProductsData.map((product) => (
                 <div
                   key={product.id}
-                  className="flex items-center justify-between gap-5 my-5 "
+                  className="my-5 flex items-center justify-between gap-5 "
                 >
                   <div>
-                    <h1 className="text-[#0E53A5] hover:text-[#59B210] transition-all cursor-pointer font-semibold">
+                    <h1 className="cursor-pointer font-semibold text-[#0E53A5] transition-all hover:text-[#59B210]">
                       {product.heading}
                     </h1>
-                    <span className="line-through mr-2 text-gray-500">
+                    <span className="mr-2 text-gray-500 line-through">
                       {product.old_price}
                     </span>
                     <span>{product.regular_price}</span>
