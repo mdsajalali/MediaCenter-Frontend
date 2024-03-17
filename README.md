@@ -1,8 +1,38 @@
-# React + Vite
+# Media Center Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the Media Center Frontend repository! This project embodies a dynamic and user-friendly Media Center, meticulously crafted with React.js, Tailwind CSS, and other cutting-edge technologies.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Landing Page:**
+- **Products Page:**
+- **MyCart Page:**
+- **Product Details Page:**
+- **Login Page:**
+- **Register Page:**
+
+## Tech Stack
+
+- React.js
+- React Router DOM
+- Tanstack Query
+- Axios
+- Swiper
+- Tailwind CSS
+- Firebase
+- React Fast Marquee
+- Sweetalert2
+
+## Getting Started
+
+1. Clone the repository.
+2. Install dependencies using npm install.
+3. Set up environment variables.
+4. Run the server with npm run dev.
+ 
+
+Explore the live project [here](https://media-center-shop.vercel.app/).
+
+Connect with me on [LinkedIn](https://www.linkedin.com/in/mdsajalali/).
+
+Happy coding!
