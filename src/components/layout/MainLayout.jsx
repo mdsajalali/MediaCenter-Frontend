@@ -1,5 +1,6 @@
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
+import PropTypes from "prop-types";
 
 const MainLayout = ({ children }) => {
   return (
@@ -27,6 +28,10 @@ const MainLayout = ({ children }) => {
       </div>
     </div>
   );
+};
+
+MainLayout.propTypes = {
+  children: PropTypes.node,
 };
 
 export default MainLayout;
