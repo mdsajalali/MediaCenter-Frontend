@@ -1,6 +1,6 @@
-# Media Center Frontend
+# Media Center Shop Frontend
 
-Welcome to the Media Center Frontend repository! This project embodies a dynamic and user-friendly Media Center, meticulously crafted with React.js, Tailwind CSS, and other cutting-edge technologies.
+Welcome to the Media Center Shop Frontend repository! This project embodies a dynamic and user-friendly Media Center Shop, meticulously crafted with React.js, Tailwind CSS, and other cutting-edge technologies.
 
 ## Features
 
