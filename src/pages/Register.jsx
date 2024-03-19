@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
 import { NavLink, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
@@ -17,9 +18,13 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         console.log(result.user);
+        toast.success(
+          `${name} your account has been created successfully! Welcome Home Page!`,
+        );
+        navigate("/");
       })
       .catch((error) => {
-        console.log(error.message);
+        toast.error(error.message);
       });
   };
 
@@ -27,10 +32,11 @@ const Register = () => {
     googleLogin()
       .then((result) => {
         console.log(result.user);
+        toast.success("Successfully logged in with Google!");
         navigate("/");
       })
       .catch((error) => {
-        console.log(error.message);
+        toast.error(error.message);
       });
   };
   return (

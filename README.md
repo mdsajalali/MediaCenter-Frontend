@@ -26,9 +26,9 @@ Welcome to the Media Center Frontend repository! This project embodies a dynamic
 ## Getting Started
 
 1. Clone the repository.
-2. Install dependencies using npm install.
+2. Install dependencies using `npm install`.
 3. Set up environment variables.
-4. Run the server with npm run dev.
+4. Run the server with `npm start`.
  
 
 Explore the live project [here](https://media-center-shop.vercel.app/).

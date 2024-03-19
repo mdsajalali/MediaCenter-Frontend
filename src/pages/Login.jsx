@@ -1,3 +1,4 @@
+import { toast } from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
 import { NavLink, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
@@ -13,24 +14,26 @@ const Login = () => {
     const password = form.password.value;
     const userInfo = { email, password };
     console.log(userInfo);
-    loginUser(email, password)
-      .then((result) => {
-        console.log(result.user);
-        navigate("/");
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
+   loginUser(email, password)
+     .then((result) => {
+       console.log(result.user);
+       toast.success("Successfully logged in!");
+       navigate("/");
+     })
+     .catch((error) => {
+       toast.error(error.message);
+     });
   };
 
   const handleGoogleLogin = () => {
     googleLogin()
       .then((result) => {
         console.log(result.user);
+        toast.success("Successfully logged in with Google!");
         navigate("/");
       })
       .catch((error) => {
-        console.log(error.message);
+        toast.error(error.message);
       });
   };
 
